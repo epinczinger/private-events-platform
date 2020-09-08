@@ -1,0 +1,15 @@
+<h1>New event's form</h1>
+
+<%= form_for(@event) do |f| %>
+
+<%= f.text_field :event_name, autofocus: true, placeholder: 'Event name' %>
+
+<%= f.datetime_select :event_date %>
+
+<%= f.text_field :event_location, placeholder: 'Event Location' %>
+
+<%= f.text_area :event_description, placeholder: 'Event Description' %>
+
+<%= f.submit %>
+
+<% end %>

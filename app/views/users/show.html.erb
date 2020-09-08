@@ -1,0 +1,19 @@
+<h1>Show page</h1>
+
+<h2>Hello <%= @user.name %>! </h2>
+
+<p> This is your list of events </p>
+
+<ul>
+<% @user.events.each do |event| %>
+
+<li><%= event.event_name %>
+<p> <%= event.event_description %> </p>
+<p> <%= event.event_location %> </p>
+<p> <%= event.event_date %> </p>
+
+
+<% end %>
+</ul>
+
+<%= link_to 'Back', users_path %>
