@@ -1,0 +1,16 @@
+<h1>Event's show page</h1>
+
+<h2>Hello <%= @user.name %>! </h2>
+
+<p> This is the list of Attendees to <%= @event.event_name %> </p>
+
+<ul>
+<% @event.event_attendees.each do |attend| %>
+
+<li><%= attend.event_name %>
+
+
+<% end %>
+</ul>
+
+<%= link_to 'Back', users_path %>
