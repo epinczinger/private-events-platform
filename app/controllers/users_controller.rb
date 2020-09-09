@@ -14,7 +14,15 @@ class UsersController < ActionController::Base
     end
 
     def show
-        @user = User.find(params[:id])
+        @user = User.find_by_id(params[:id])
+        unless @user
+          flash[:error] = "User not found"
+        end
+    end
+
+    def index
+        @users = User.all 
+        # @user = User.new
     end
 
     private

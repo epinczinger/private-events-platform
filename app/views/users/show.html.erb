@@ -5,9 +5,9 @@
 <p> This is your list of events </p>
 
 <ul>
-<% @user.events.each do |event| %>
+<% @user.created_events.each do |event| %>
 
-<li><%= event.event_name %>
+<li><%= link_to event.event_name, event %>
 <p> <%= event.event_description %> </p>
 <p> <%= event.event_location %> </p>
 <p> <%= event.event_date %> </p>

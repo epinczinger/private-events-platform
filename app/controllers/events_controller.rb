@@ -23,9 +23,9 @@ class EventsController < ActionController::Base
     def current_user
         session[:user_id] && User.find(session[:user_id])
     end
-    
+
     def show
-        @event = Event.find(params[:id])
+        @events = Event.find(params[:id])
     end
 
 
