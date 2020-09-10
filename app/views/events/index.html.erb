@@ -1,0 +1,10 @@
+<h1>This is the index</h1><br/>
+
+<% @events.each do |event| %>
+<%= link_to event.event_name, event%><br/>
+  
+<% end %><br/>
+
+<%= link_to 'New Event', new_event_path %><br/>
+
+<%= link_to 'Back to Users', users_path %>

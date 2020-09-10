@@ -5,5 +5,7 @@
     <h1>You are Logged In, <%= current_user.name %></h1>
 <%end%>
 
+<%= link_to 'New Event', new_event_path %><br/>
+
 <%= button_to "Login", '/login', method: :get%>
 <%= button_to "Sign Up", new_user_path %>
