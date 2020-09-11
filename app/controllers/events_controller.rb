@@ -1,4 +1,4 @@
-class EventsController < ActionController::Base
+class EventsController < ApplicationController
   def index
     @past = Event.past
     @upcoming = Event.upcoming

@@ -10,6 +10,20 @@
   </head>
 
   <body>
+  <%= render 'layouts/navbar' %>
+
+
+    <% flash.each do |name, msg| %>
+      <div class='alert alert-<%="#{name}" %>'>
+        <a href="#" class="close" data-dismiss="alert">
+          &#215;
+        </a>
+        <%= msg %>
+      </div>
+    <% end %>
+
+  <div>
     <%= yield %>
+  </div>
   </body>
 </html>
