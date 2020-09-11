@@ -1,15 +1,10 @@
 <h1>New User form</h1>
 
-<%= simple_form_for @user do |f| %>
-  <%= f.input :name, label: 'Your username please', error: 'Username is mandatory, please specify one' %>
-  <%= f.input :password, hint: 'No special characters.' %>
-  <%= f.input :email, placeholder: 'user@domain.com' %>
-  <%= f.button :submit %>
-<% end %>
-
 <%= form_for @user do |f|%>
   <%= f.label :name%><br>
   <%= f.text_field :name%><br>
+  <%= f.label :email%><br>
+  <%= f.text_field :email%><br>
   <%= f.label :password%><br>
   <%= f.password_field :password%><br>
   <%= f.submit %>
