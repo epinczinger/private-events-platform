@@ -2,7 +2,18 @@
 <%= link_to 'Home', root_path, class: "" %>
 
 <%= link_to 'Events', events_path %>
-
+<% if logged_in? %>
 <%= link_to 'Create Event', new_event_path, class: "" %>
-
+<% end  %>
 <%= link_to 'Users', users_path %>
+
+
+    
+    <% if logged_in? %>
+     <%= link_to('My Profile', user_path(session[:user_id])) %>
+     <%= link_to('Sign out', logout_path, method: :delete) %>
+    <% else  %>
+    <%=  link_to('Log in', login_path) %>
+    <%=  link_to('Sign up', login_path,) %>
+    <% end  %>
+
