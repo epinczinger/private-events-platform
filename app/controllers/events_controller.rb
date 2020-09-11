@@ -1,7 +1,7 @@
 class EventsController < ActionController::Base
   def index
-    @events = Event.all.order('event_date DESC')
-    @event = Event.new
+    @past = Event.past
+    @upcoming = Event.upcoming
   end
 
   def new

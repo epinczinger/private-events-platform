@@ -3,25 +3,23 @@
 
  <p> Upcoming Events</p>
 
-<% @events.each do |event| %>
-<% if event.event_date > Date.today %>
+<% @upcoming.each do |event| %>
+
 
 <%= link_to event.event_name, event%><br/>
 <%= event.event_date%><br/>
 
 
-<% end %>
 <% end %><br/>
 
 <p> Past Events</p>
-<% @events.each do |event| %>
-<% if event.event_date < Date.today %>
+<% @past.each do |event| %>
+
 
 <%= link_to event.event_name, event%><br/>
 <%= event.event_date%><br/>
 
 
-<% end %>
 <% end %><br/>
 
 
