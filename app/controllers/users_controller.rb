@@ -1,7 +1,5 @@
 class UsersController < ActionController::Base
 
-    # before_action :require_login
-
     def new
         @user = User.new
     end
@@ -22,7 +20,7 @@ class UsersController < ActionController::Base
 
     def index
         @users = User.all 
-        # @user = User.new
+        @events = Event.all
     end
 
     private

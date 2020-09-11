@@ -2,7 +2,7 @@
 
 <h2>Hello <%= @user.name %>! </h2>
 
-<p> This is your list of events </p>
+<p> This is the list of events you have created </p>
 
 <ul>
 <% @user.created_events.each do |event| %>
@@ -12,8 +12,44 @@
 <p> <%= event.event_location %> </p>
 <p> <%= event.event_date %> </p>
 
-
 <% end %>
 </ul>
 
+ <p> Upcoming Events, this is the list of events you will attend</p>
+
+
+<ol>
+<% @user.attended_events.each do |event| %>
+
+<% if event.event_date > Date.today %>
+
+  <li><%= link_to event.event_name, event %></li>
+  <p><%= event.event_description %></p>
+  <p><%= event.event_location %></p>
+  <p><%= event.event_date %></p>
+  <% end %>
+
+<% end %>
+</ol>
+
+  <p> Past Events, this is the list of events you have attended</p>
+
+
+<ol>
+<% @user.attended_events.each do |event| %>
+
+<% if event.event_date < Date.today %>
+
+  <li><%= link_to event.event_name, event %></li>
+  <p><%= event.event_description %></p>
+  <p><%= event.event_location %></p>
+  <p><%= event.event_date %></p>
+  <% end %>
+
+<% end %>
+</ol>
+ 
 <%= link_to 'Back', users_path %>
+
+
+

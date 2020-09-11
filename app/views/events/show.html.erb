@@ -1,13 +1,25 @@
-<h1>Event's show page</h1>
+<h1><%= @events.event_name %> </h1>
 
-<h2>Hello <%= current_user.name %> </h2>
 
-<p> This is the list of Attendees to <%= current_user.invitations.name %> </p>
+<p><strong>Description:</strong> <%= @events.event_description %></p>
+<p><strong>Location:</strong> <%= @events.event_location %></p>
+<p><strong>Date:</strong> <%= @events.event_date %></p>
+
+<span> This event was created by <%= User.find(@events.event_creator_id).name%> </span>
+
+
+
+
+
+
+
+
+ <p>This is the list of Attendees to the event </p>
 
 <ul>
-<% current_user.attended_events.each do |attend| %>
+<% @events.event_attendees.each do |attend| %>
 
-<li><%= attend.event_name %>
+<li><%= attend.name %>
 
 
 <% end %>

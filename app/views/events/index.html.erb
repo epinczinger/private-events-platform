@@ -1,9 +1,30 @@
 <h1>This is the index</h1><br/>
 
+
+ <p> Upcoming Events</p>
+
 <% @events.each do |event| %>
+<% if event.event_date > Date.today %>
+
 <%= link_to event.event_name, event%><br/>
-  
+<%= event.event_date%><br/>
+
+
+<% end %>
 <% end %><br/>
+
+<p> Past Events</p>
+<% @events.each do |event| %>
+<% if event.event_date < Date.today %>
+
+<%= link_to event.event_name, event%><br/>
+<%= event.event_date%><br/>
+
+
+<% end %>
+<% end %><br/>
+
+
 
 <%= link_to 'New Event', new_event_path %><br/>
 
