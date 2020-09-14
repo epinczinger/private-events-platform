@@ -1,9 +1,9 @@
-<h1><%= @events.event_name %> </h1>
+<h1><%= @event.event_name %> </h1>
 
 
-<p><strong>Description:</strong> <%= @events.event_description %></p>
-<p><strong>Location:</strong> <%= @events.event_location %></p>
-<p><strong>Date:</strong> <%= @events.event_date %></p>
+<p><strong>Description:</strong> <%= @event.event_description %></p>
+<p><strong>Location:</strong> <%= @event.event_location %></p>
+<p><strong>Date:</strong> <%= @event.event_date %></p>
 
 <span> This event was created by <%= current_event_creator %> </span>
 
@@ -17,7 +17,7 @@
  <p>This is the list of Attendees to the event </p>
 
 <ul>
-<% @events.event_attendees.each do |attend| %>
+<% @event.event_attendees.each do |attend| %>
 
 <li><%= attend.name %>
 

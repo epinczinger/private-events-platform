@@ -1,6 +1,6 @@
 module ApplicationHelper
   def current_event_creator
-    User.find(@events.event_creator_id).name
+    User.find(@event.event_creator_id).name
   end
 
   def current_user

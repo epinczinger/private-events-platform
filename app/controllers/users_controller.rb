@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
+    @upcoming_events = @user.attended_events.upcoming
+    @prev_events = @user.attended_events.past
     flash[:error] = 'User not found' unless @user
   end
 

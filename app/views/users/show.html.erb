@@ -17,7 +17,7 @@
 
 <b> Upcoming Events, this is the list of events you will attend</b><br/>
 
-<% @user.attended_events.upcoming.each do |event| %>
+<% @upcoming_events.each do |event| %>
 
 
 <%= link_to event.event_name, event%><br/>
@@ -27,7 +27,7 @@
 <% end %><br/>
 
 <b> Past Events, this is the list of events you have attended</b><br/>
-<%  @user.attended_events.past.each do |event| %>
+<%  @prev_events.each do |event| %>
 
 
 <%= link_to event.event_name, event%><br/>
