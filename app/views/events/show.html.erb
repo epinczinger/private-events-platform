@@ -5,7 +5,7 @@
 <p><strong>Location:</strong> <%= @events.event_location %></p>
 <p><strong>Date:</strong> <%= @events.event_date %></p>
 
-<span> This event was created by <%= User.find(@events.event_creator_id).name%> </span>
+<span> This event was created by <%= current_event_creator %> </span>
 
 
 
