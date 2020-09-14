@@ -17,7 +17,8 @@ class ApplicationController < ActionController::Base
     flash[:danger] = 'You need to be logged in to perform that action'
     redirect_to root_path
   end
+
   def authorized
     redirect_to '/welcome' unless logged_in?
- end
+  end
 end

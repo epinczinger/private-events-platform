@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
-  before_action :require_user, except: [:index, :show]
-
+  before_action :require_user, except: %i[index show]
 
   def index
     @past = Event.past

@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   def current_event_creator
     User.find(@events.event_creator_id).name
   end
@@ -9,13 +8,12 @@ module ApplicationHelper
   end
 
   def navbar_log_buttons
-    if logged_in? 
-     link_to('My Profile', user_path(session[:user_id])) 
-     link_to('Sign out', logout_path, method: :delete) 
-    else  
-      link_to('Log in', login_path, method: :get) 
-      link_to('Sign up', new_user_path) 
-    end  
+    if logged_in?
+      link_to('My Profile', user_path(session[:user_id]))
+      link_to('Sign out', logout_path, method: :delete)
+    else
+      link_to('Log in', login_path, method: :get)
+      link_to('Sign up', new_user_path)
+    end
   end
-  
 end
