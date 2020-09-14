@@ -35,6 +35,7 @@ To get a local copy up and running follow these simple example steps.
 - cd to the project `cd private-events-platform`
 - Install gems `bundle install`
 - Install Yarn `yarn install --check-files` 
+- Migrate `rails db:migrate` 
 - Run `rails server`
 
 ## Authors
