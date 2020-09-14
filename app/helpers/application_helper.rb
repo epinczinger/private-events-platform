@@ -8,12 +8,14 @@ module ApplicationHelper
   end
 
   def navbar_log_buttons
+    links = ''
     if logged_in?
-      link_to('My Profile', user_path(session[:user_id]))
-      link_to('Sign out', logout_path, method: :delete)
+      links << link_to('My Profile', user_path(session[:user_id]))
+      links << '  ' + link_to('Sign out', logout_path, method: :delete)
     else
-      link_to('Log in', login_path, method: :get)
-      link_to('Sign up', new_user_path)
+      links << link_to('Log in', login_path, method: :get)
+      links << '  ' + link_to('Sign up', new_user_path)
     end
+    links.html_safe
   end
 end
