@@ -1,0 +1,45 @@
+<h1>Show page</h1>
+
+<h2>Hello <%= @user.name %>! </h2>
+
+<p> This is the list of events you have created </p>
+
+<ul>
+<% @user.created_events.each do |event| %>
+
+<li><%= link_to event.event_name, event %>
+<p> <%= event.event_description %> </p>
+<p> <%= event.event_location %> </p>
+<p> <%= event.event_date %> </p>
+
+<% end %>
+
+
+<b> Upcoming Events, this is the list of events you will attend</b><br/>
+
+<% @upcoming_events.each do |event| %>
+
+
+<%= link_to event.event_name, event%><br/>
+<%= event.event_date%><br/>
+
+
+<% end %><br/>
+
+<b> Past Events, this is the list of events you have attended</b><br/>
+<%  @prev_events.each do |event| %>
+
+
+<%= link_to event.event_name, event%><br/>
+<%= event.event_date%><br/>
+
+
+<% end %><br/>
+
+
+
+ 
+<%= link_to 'Back', users_path %>
+
+
+

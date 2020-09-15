@@ -1,0 +1,23 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
+<h1>New event's form</h1><br/>
+
+<%= form_for(@event) do |f| %> <br/>
+
+<%= f.text_field :event_name, autofocus: true, placeholder: 'Event name' %><br/>
+
+<%= f.datetime_select :event_date %><br/>
+
+<%= f.text_field :event_location, placeholder: 'Event Location' %><br/>
+
+<%= f.text_area :event_description, placeholder: 'Event Description' %><br/>
+
+<%= f.submit %><br/>
+
+<% end %><br/>
+
+<%= link_to 'Back to users', users_path %>

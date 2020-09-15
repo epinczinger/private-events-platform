@@ -1,0 +1,29 @@
+<h1><%= @event.event_name %> </h1>
+
+
+<p><strong>Description:</strong> <%= @event.event_description %></p>
+<p><strong>Location:</strong> <%= @event.event_location %></p>
+<p><strong>Date:</strong> <%= @event.event_date %></p>
+
+<span> This event was created by <%= current_event_creator %> </span>
+
+
+
+
+
+
+
+
+ <p>This is the list of Attendees to the event </p>
+
+<ul>
+<% @event.event_attendees.each do |attend| %>
+
+<li><%= attend.name %>
+
+
+<% end %>
+
+</ul>
+
+<%= link_to 'Back', users_path %>
